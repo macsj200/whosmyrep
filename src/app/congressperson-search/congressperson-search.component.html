@@ -1,21 +1,19 @@
 <div>
-  <form>
-      <div class="row">
-        <div class="col">
-          <select class="form-control" id="exampleFormControlSelect1">
-              <option>Representatives</option>
-              <option>Senators</option>
-          </select>
-        </div>
-        <div class="col">
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>UT</option>
-                <option>CA</option>
-            </select>
-        </div>
-        <div class="col">
-          <button type="submit" class="btn btn-primary mb-2">Submit</button>
-        </div>
+  <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+      <div class="form-group">
+        <label>House</label>
+        <select [(ngModel)]="search.house" class="form-control" name="house">
+            <option>Representatives</option>
+            <option>Senators</option>
+        </select>
       </div>
-    </form>
+      <div class="form-group">
+        <label>State</label>
+        <select [(ngModel)]="search.state" class="form-control" name="state">
+            <option>UT</option>
+            <option>CA</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </form>
 </div>

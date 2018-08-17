@@ -1,8 +1,11 @@
 export class Congressperson {
-    firstName: string;
-    lastName: string;
-    district: string;
-    phone: string;
-    office: string;
-    party: string;
+    constructor(
+        public firstName: string,
+        public lastName: string,
+        public district: string,
+        public phone: string,
+        public office: string,
+        public party: string
+    ) {}
+
 }
