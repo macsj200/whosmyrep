@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private congresspersonService: CongresspersonService) { }
 
   searchQuery = {
-    house: "representatives", 
+    house: "Representatives",
     state: "UT"
   };
 

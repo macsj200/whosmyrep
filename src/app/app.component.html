@@ -14,7 +14,9 @@
   </div>
   <div class="row">
       <div class="col-sm">
-          <app-congressperson-list [congresspersons]="congresspersons" (clickEvent)="receiveCongressperson($event)">
+          <app-congressperson-list 
+            [house]="searchQuery.house"
+            [congresspersons]="congresspersons" (clickEvent)="receiveCongressperson($event)">
           </app-congressperson-list>
       </div>
       <div class="col-sm">

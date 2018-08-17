@@ -24,5 +24,5 @@ export class CongresspersonListComponent implements OnInit {
     this.clickEvent.emit(congressperson);
   }
 
-  house = 'Representatives'
+  @Input() house = 'Representatives'
 }
