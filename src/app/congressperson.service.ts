@@ -10,6 +10,8 @@ export class CongresspersonService {
 
   constructor(private http: HttpClient) { }
 
+  selectedCongressperson: Congressperson;
+
   getCongresspersons(): Observable<Congressperson[]> {
     // this.http.get<Congressperson[]>('http://localhost:3000/representatives/UT').subscribe(console.log)
     // return;

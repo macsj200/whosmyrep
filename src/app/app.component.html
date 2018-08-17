@@ -14,10 +14,10 @@
   </div>
   <div class="row">
       <div class="col-sm">
-          <app-congressperson-list></app-congressperson-list>
+          <app-congressperson-list (clickEvent)="receiveCongressperson($event)"></app-congressperson-list>
       </div>
       <div class="col-sm">
-        <app-congressperson-detail></app-congressperson-detail>
+        <app-congressperson-detail [congressperson]="congressperson"></app-congressperson-detail>
       </div>
   </div>
 </div>
