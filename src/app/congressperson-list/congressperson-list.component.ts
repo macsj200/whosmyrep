@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CongresspersonService } from '../congressperson.service';
 import { Congressperson } from '../congressperson';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-congressperson-list',
@@ -18,7 +20,10 @@ export class CongresspersonListComponent implements OnInit {
   congresspersons: Congressperson[];
 
   getCongresspersons(): void {
-    this.congresspersons = this.congresspersonService.getCongresspersons();
+    // console.log(this.congresspersonService.getCongresspersons())
+    this.congresspersonService.getCongresspersons().subscribe(res => {
+      this.congresspersons = Array.from(res.results);
+    });
   }
   // congresspeople = [
   //   {

@@ -1,7 +1,6 @@
 export class Congressperson {
     constructor(
-        public firstName: string,
-        public lastName: string,
+        public name: string,
         public district: string,
         public phone: string,
         public office: string,
