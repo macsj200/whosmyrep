@@ -12,13 +12,8 @@ export class CongresspersonService {
 
   selectedCongressperson: Congressperson;
 
-  getCongresspersons(): Observable<Congressperson[]> {
-    // this.http.get<Congressperson[]>('http://localhost:3000/representatives/UT').subscribe(console.log)
-    // return;
-    return this.http.get<Congressperson[]>('http://localhost:3000/representatives/UT');
-    // return of([
-    //   new Congressperson('Ted', 'Cruz', 'TX', '867 5309', '123 Spooner St.', 'R'),
-    //   new Congressperson('B', 'Monay', 'UT', '867 5309', '123 Spooner St.', 'D'),
-    // ]);
+  getCongresspersons(searchQuery): Observable<Congressperson[]> {
+    const { house, state } = searchQuery;
+    return this.http.get<Congressperson[]>(`http://localhost:3000/${house}/${state}`);
   }
 }

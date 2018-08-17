@@ -12,14 +12,24 @@ export class AppComponent {
 
   constructor(private congresspersonService: CongresspersonService) { }
 
+  searchQuery = {
+    house: "representatives", 
+    state: "UT"
+  };
+
   ngOnInit() {
     this.getCongresspersons();
   }
 
   congresspersons: Congressperson[];
 
+  receiveSearch($event) {
+    this.searchQuery = $event
+    this.getCongresspersons();
+  }
+
   getCongresspersons(): void {
-    this.congresspersonService.getCongresspersons().subscribe(res => {
+    this.congresspersonService.getCongresspersons(this.searchQuery).subscribe(res => {
       // TODO figure out this weird typing issue
       this.congresspersons = Array.from(res.results);
     });

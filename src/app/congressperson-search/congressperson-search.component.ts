@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Congressperson } from '../congressperson';
+
 
 
 @Component({
@@ -19,8 +20,10 @@ export class CongresspersonSearchComponent implements OnInit {
     state: "UT"
   };
 
+  @Output() submitEvent = new EventEmitter();
+
   onSubmit() {
-    console.log('do search', this.search)
+    this.submitEvent.emit(this.search);
   }
 
 }
