@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Congressperson } from './congressperson';
+import { CongresspersonService } from './congressperson.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,21 @@ import { Congressperson } from './congressperson';
 })
 export class AppComponent {
   title = 'congressive';
+
+  constructor(private congresspersonService: CongresspersonService) { }
+
+  ngOnInit() {
+    this.getCongresspersons();
+  }
+
+  congresspersons: Congressperson[];
+
+  getCongresspersons(): void {
+    this.congresspersonService.getCongresspersons().subscribe(res => {
+      // TODO figure out this weird typing issue
+      this.congresspersons = Array.from(res.results);
+    });
+  }
 
   congressperson: Congressperson = {
     name: 'Ted Cruz',
