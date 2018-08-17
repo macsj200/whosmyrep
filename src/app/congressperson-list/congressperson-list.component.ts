@@ -12,4 +12,24 @@ export class CongresspersonListComponent implements OnInit {
   ngOnInit() {
   }
 
+  congresspeople = [
+    {
+      firstName: 'Ted',
+      lastName: 'Cruz',
+      district: 'TX',
+      phone: '801 867 5309',
+      office: '123 Spooner St.',
+      party: 'R'
+    },
+    {
+      firstName: 'B',
+      lastName: 'Monay',
+      district: 'UT',
+      phone: '801 867 5309',
+      office: '123 Spooner St.',
+      party: 'D'
+    },
+  ];
+
+  house = 'Representatives'
 }

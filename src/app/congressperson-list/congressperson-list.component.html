@@ -1,5 +1,5 @@
 <div>
-    <h2>List / <span style="color:#0000ffb5">Representatives</span></h2>
+    <h2>List / <span style="color:#0000ffb5">{{ house }}</span></h2>
     <table class="table">
         <thead>
           <tr>
@@ -8,13 +8,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Ryan Nelson</td>
-            <td>R</td>
-          </tr>
-          <tr>
-            <td>Goon Boi</td>
-            <td>D</td>
+          <tr *ngFor="let congressperson of congresspeople">
+            <td>{{ congressperson.firstName }} {{ congressperson.lastName }}</td>
+            <td>{{ congressperson.party }}</td>
           </tr>
         </tbody>
       </table>

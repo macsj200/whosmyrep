@@ -12,4 +12,11 @@ export class CongresspersonDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  congressperson = {
+    firstName: 'Ted',
+    lastName: 'Cruz',
+    district: 'TX',
+    phone: '801 867 5309',
+    office: '123 Spooner St.'
+  };
 }
